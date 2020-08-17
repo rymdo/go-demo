@@ -18,7 +18,7 @@ func main() {
 	led := machine.LED
 	led.Configure(machine.PinConfig{Mode: machine.PinOutput})
 
-	var neo machine.Pin = machine.Pin(6)
+	var neo machine.Pin = machine.Pin(7)
 	neo.Configure(machine.PinConfig{Mode: machine.PinOutput})
 
 	ws := ws2812.New(neo)
@@ -38,6 +38,6 @@ func main() {
 
 		ws.WriteColors(leds[:])
 		led.Set(rg)
-		time.Sleep(500 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 	}
 }
